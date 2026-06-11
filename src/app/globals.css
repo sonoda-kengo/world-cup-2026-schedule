@@ -1,0 +1,711 @@
+:root {
+  color-scheme: dark;
+  --bg: #020404;
+  --panel: rgba(2, 12, 13, 0.82);
+  --panel-strong: rgba(3, 20, 22, 0.94);
+  --cyan: #35d9e8;
+  --cyan-soft: rgba(53, 217, 232, 0.22);
+  --blue: #6fa8ff;
+  --green: #8bd85f;
+  --orange: #ff9f2e;
+  --pink: #ff6389;
+  --purple: #a96dff;
+  --yellow: #ffd326;
+  --text: #f4fbfb;
+  --muted: #98b5b8;
+  --line: rgba(53, 217, 232, 0.28);
+  --line-soft: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #000;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(53, 217, 232, 0.12), transparent 25rem),
+    radial-gradient(circle at 82% 34%, rgba(255, 211, 38, 0.08), transparent 20rem),
+    linear-gradient(180deg, #000 0%, var(--bg) 52%, #000 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background-image:
+    linear-gradient(rgba(53, 217, 232, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 217, 232, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 80%);
+}
+
+body::after {
+  position: fixed;
+  inset: -20% 0 auto;
+  z-index: -1;
+  height: 40%;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(53, 217, 232, 0.08), transparent);
+  animation: scan 9s linear infinite;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  width: min(1480px, calc(100% - 32px));
+  min-width: 0;
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-width: 0;
+  gap: 24px;
+  align-items: end;
+  padding: 22px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--cyan);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(38px, 7vw, 88px);
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 28px rgba(53, 217, 232, 0.28);
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.heroActions {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.segmented {
+  display: flex;
+  min-width: 0;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.segmented > span {
+  padding-left: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.segmented div {
+  display: flex;
+  min-width: 0;
+  gap: 4px;
+}
+
+.segmented button,
+.filter {
+  min-height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.segmented button {
+  padding: 0 10px;
+  color: var(--muted);
+}
+
+.segmented button.selected,
+.filter.active {
+  background: var(--cyan-soft);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--cyan);
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto auto auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(12px);
+}
+
+.searchToggle {
+  display: none;
+  min-width: 0;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.74);
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.searchToggle span {
+  color: var(--cyan);
+  font-size: 20px;
+}
+
+.searchToggle.active {
+  border-color: var(--cyan);
+  background: var(--cyan-soft);
+  color: var(--text);
+}
+
+.teamCombobox {
+  position: relative;
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.74);
+}
+
+.teamCombobox > span {
+  flex: 0 0 auto;
+  color: var(--cyan);
+  font-size: 20px;
+}
+
+.teamCombobox input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.teamCombobox input::placeholder {
+  color: rgba(152, 181, 184, 0.78);
+}
+
+.clearTeamButton {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.teamSuggestions {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  z-index: 5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+}
+
+.teamSuggestions button {
+  display: grid;
+  width: 100%;
+  min-height: 42px;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.teamSuggestions button:last-child {
+  border-bottom: 0;
+}
+
+.teamSuggestions button:hover {
+  background: var(--cyan-soft);
+}
+
+.teamSuggestions small {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filterButtons {
+  display: flex;
+  min-width: 0;
+  gap: 8px;
+}
+
+.filter {
+  min-width: 0;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.15;
+}
+
+.groupSelect,
+.dateSelect,
+.pastToggle {
+  display: flex;
+  min-width: 0;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.74);
+}
+
+.groupSelect span,
+.dateSelect span,
+.pastToggle span {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pastToggle {
+  cursor: pointer;
+}
+
+.pastToggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--cyan);
+  cursor: pointer;
+}
+
+.groupSelect select,
+.dateSelect select {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.matchCount {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.dayPanel {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: inset 0 0 18px rgba(53, 217, 232, 0.05);
+}
+
+.dayPanel h2 {
+  margin: 0;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--cyan);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.matchList {
+  display: grid;
+}
+
+.matchRow {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 74px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.matchRow:last-child {
+  border-bottom: 0;
+}
+
+.matchRow time {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+.teams {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.team {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.team span:last-child,
+.venue {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flag {
+  display: inline-grid;
+  width: 24px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.versus,
+.venue {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.versus {
+  padding-left: 31px;
+  text-transform: uppercase;
+}
+
+.stageBadge {
+  max-width: 100%;
+  justify-self: end;
+  padding: 5px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stageGroup {
+  color: var(--cyan);
+}
+
+.stageR32 {
+  color: var(--blue);
+}
+
+.stageR16 {
+  color: var(--green);
+}
+
+.stageQf {
+  color: var(--orange);
+}
+
+.stageSf {
+  color: var(--pink);
+}
+
+.stageThird {
+  color: var(--purple);
+}
+
+.stageFinal {
+  color: var(--yellow);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 64px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty p {
+  margin: 0;
+}
+
+.empty button {
+  min-height: 36px;
+  margin-top: 14px;
+  padding: 0 14px;
+  border: 1px solid var(--cyan);
+  border-radius: 8px;
+  background: var(--cyan-soft);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.sourceNote {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-10vh);
+  }
+
+  to {
+    transform: translateY(140vh);
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .heroActions,
+  .matchCount {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .scheduleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .shell {
+    width: min(100% - 16px, 1480px);
+    padding-top: 16px;
+  }
+
+  h1 {
+    overflow-wrap: anywhere;
+    font-size: 36px;
+    line-height: 0.95;
+  }
+
+  .heroActions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .segmented > span,
+  .groupSelect span,
+  .dateSelect span,
+  .pastToggle span {
+    font-size: 11px;
+  }
+
+  .groupSelect span,
+  .dateSelect span {
+    display: none;
+  }
+
+  .segmented button {
+    min-width: 0;
+    padding: 0 8px;
+  }
+
+  .toolbar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .searchToggle {
+    display: inline-flex;
+  }
+
+  .teamCombobox {
+    display: none;
+    grid-column: 1 / -1;
+    order: 2;
+  }
+
+  .teamCombobox.open {
+    display: flex;
+  }
+
+  .teamSuggestions {
+    right: -1px;
+    left: -1px;
+  }
+
+  .filterButtons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    order: 3;
+    grid-column: 1 / -1;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 6px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .groupSelect {
+    order: 1;
+    padding: 0 8px;
+  }
+
+  .dateSelect {
+    order: 1;
+    padding: 0 8px;
+  }
+
+  .pastToggle {
+    order: 4;
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .matchCount {
+    order: 5;
+    grid-column: 1 / -1;
+  }
+
+  .segmented,
+  .groupSelect,
+  .dateSelect {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .pastToggle {
+    width: 100%;
+  }
+
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .matchRow {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 68px;
+    padding: 9px 10px;
+  }
+
+  .team {
+    font-size: 13px;
+  }
+
+  .flag {
+    width: 22px;
+    min-width: 22px;
+  }
+
+  .venue {
+    white-space: normal;
+  }
+
+  .stageBadge {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
