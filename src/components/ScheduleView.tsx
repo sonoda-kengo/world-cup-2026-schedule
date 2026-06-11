@@ -379,7 +379,11 @@ export function ScheduleView({ matches }: Props) {
         )}
       </section>
 
-      <p className="sourceNote">{dict.sourceNote}</p>
+      <footer className="footer">
+        <a href="https://github.com/sonoda-kengo" rel="noreferrer" target="_blank">
+          {dict.authorCredit}
+        </a>
+      </footer>
     </main>
   );
 }
