@@ -126,6 +126,7 @@ export function ScheduleView({ matches }: Props) {
 
   const filtered = useMemo(() => {
     const normalizedTeamQuery = normalizeSearch(teamQuery);
+    const todayKey = now === null ? null : formatMatchDate(new Date(now).toISOString(), timezone, locale).dayKey;
 
     return matches
       .filter((match) => {
@@ -144,8 +145,8 @@ export function ScheduleView({ matches }: Props) {
         const timeOk =
           showPastMatches ||
           dateFilter !== "all" ||
-          now === null ||
-          Date.parse(match.startsAt) >= now;
+          todayKey === null ||
+          formatMatchDate(match.startsAt, timezone, locale).dayKey >= todayKey;
 
         const selectedTeamOk =
           !selectedTeam || match.home === selectedTeam || match.away === selectedTeam;
