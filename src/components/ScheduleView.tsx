@@ -53,7 +53,7 @@ export function ScheduleView({ matches }: Props) {
   const [dateFilter, setDateFilter] = useState<DateFilter>("all");
   const [showPastMatches, setShowPastMatches] = useState(false);
   const [now, setNow] = useState<number | null>(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMoreFiltersOpen, setIsMoreFiltersOpen] = useState(false);
   const [isTeamInputFocused, setIsTeamInputFocused] = useState(false);
   const [teamQuery, setTeamQuery] = useState("");
   const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
@@ -62,6 +62,12 @@ export function ScheduleView({ matches }: Props) {
   useEffect(() => {
     setNow(Date.now());
   }, []);
+
+  useEffect(() => {
+    if (selectedTeam) {
+      setTeamQuery(teamName(selectedTeam, locale));
+    }
+  }, [locale, selectedTeam]);
 
   const groupOptions = useMemo(() => {
     return Array.from(
@@ -190,6 +196,17 @@ export function ScheduleView({ matches }: Props) {
     }, []);
   }, [filtered, locale, timezone]);
 
+  const toggleQuickTeam = (team: string) => {
+    if (selectedTeam === team) {
+      setSelectedTeam(null);
+      setTeamQuery("");
+      return;
+    }
+
+    setSelectedTeam(team);
+    setTeamQuery(teamName(team, locale));
+  };
+
   return (
     <main className="shell">
       <section className="hero" aria-labelledby="page-title">
@@ -221,17 +238,29 @@ export function ScheduleView({ matches }: Props) {
         </div>
       </section>
 
-      <section className="toolbar" aria-label="Filters">
-        <button
-          aria-expanded={isSearchOpen}
-          className={teamQuery || selectedTeam ? "searchToggle active" : "searchToggle"}
-          onClick={() => setIsSearchOpen((open) => !open)}
-          type="button"
-        >
-          <span aria-hidden="true">⌕</span>
-          {dict.searchToggle}
-        </button>
-        <div className={isSearchOpen ? "teamCombobox open" : "teamCombobox"}>
+      <section className={isMoreFiltersOpen ? "toolbar moreFiltersOpen" : "toolbar"} aria-label="Filters">
+        <div className="quickTeamBlock">
+          <span className="quickTeamLabel">{dict.quickTeamsLabel}</span>
+          <div className="quickTeamButtons" aria-label={dict.quickTeams}>
+            {[
+              { name: "Japan", code: "JP" },
+              { name: "Netherlands", code: "NL" },
+            ].map((team) => (
+              <button
+                className={selectedTeam === team.name ? "quickTeam active" : "quickTeam"}
+                key={team.name}
+                onClick={() => toggleQuickTeam(team.name)}
+                type="button"
+              >
+                <span className="flag" aria-hidden="true">
+                  {flagEmoji(team.code)}
+                </span>
+                <span>{teamName(team.name, locale)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="teamCombobox">
           <span aria-hidden="true">⌕</span>
           <input
             aria-autocomplete="list"
@@ -270,7 +299,6 @@ export function ScheduleView({ matches }: Props) {
                     setSelectedTeam(option.canonical);
                     setTeamQuery(option.label);
                     setIsTeamInputFocused(false);
-                    setIsSearchOpen(true);
                   }}
                   role="option"
                   type="button"
@@ -337,6 +365,18 @@ export function ScheduleView({ matches }: Props) {
             ))}
           </select>
         </label>
+        <button
+          aria-expanded={isMoreFiltersOpen}
+          aria-label={isMoreFiltersOpen ? dict.hideFilters : dict.moreFilters}
+          className="moreFiltersToggle"
+          onClick={() => setIsMoreFiltersOpen((open) => !open)}
+          type="button"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M4 6h16l-6 7v4l-4 3v-7L4 6Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+          </svg>
+          <span>{dict.moreFiltersShort}</span>
+        </button>
         <label className="pastToggle">
           <input
             checked={showPastMatches}
