@@ -449,9 +449,9 @@ h1 {
   width: 24px;
   height: 18px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.07);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   font-size: 16px;
   line-height: 1;
 }
@@ -603,23 +603,19 @@ h1 {
   }
 
   .toolbar {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
     align-items: stretch;
   }
 
   .searchToggle {
-    display: inline-flex;
+    display: none;
   }
 
   .teamCombobox {
-    display: none;
-    grid-column: 1 / -1;
-    order: 2;
-  }
-
-  .teamCombobox.open {
     display: flex;
+    grid-column: 1 / -1;
+    order: 1;
   }
 
   .teamSuggestions {
@@ -649,12 +645,12 @@ h1 {
   }
 
   .groupSelect {
-    order: 1;
+    order: 2;
     padding: 0 8px;
   }
 
   .dateSelect {
-    order: 1;
+    order: 2;
     padding: 0 8px;
   }
 
