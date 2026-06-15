@@ -433,7 +433,7 @@ h1 {
 
 .matchRow {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) auto;
+  grid-template-columns: 58px minmax(0, 1fr);
   gap: 10px;
   align-items: center;
   min-height: 74px;
@@ -454,11 +454,26 @@ h1 {
 .teams {
   display: grid;
   min-width: 0;
-  gap: 3px;
+  gap: 7px;
+}
+
+.teamPair {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.matchMeta {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
 }
 
 .team {
   display: flex;
+  flex: 1 1 0;
   min-width: 0;
   align-items: center;
   gap: 7px;
@@ -492,13 +507,13 @@ h1 {
 }
 
 .versus {
-  padding-left: 31px;
+  flex: 0 0 auto;
   text-transform: uppercase;
 }
 
 .stageBadge {
+  flex: 0 0 auto;
   max-width: 100%;
-  justify-self: end;
   padding: 5px 8px;
   border: 1px solid currentColor;
   border-radius: 999px;
@@ -843,11 +858,12 @@ h1 {
   }
 
   .venue {
-    white-space: normal;
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
   }
 
   .stageBadge {
-    grid-column: 2;
     justify-self: start;
   }
 }

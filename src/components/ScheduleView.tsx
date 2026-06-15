@@ -447,18 +447,22 @@ function MatchRow({
     <div className="matchRow">
       <time dateTime={match.startsAt}>{date.time}</time>
       <div className="teams">
-        {match.home && match.away ? (
-          <>
-            <Team name={match.home} code={match.homeCode} locale={locale} />
-            <span className="versus">vs</span>
-            <Team name={match.away} code={match.awayCode} locale={locale} />
-          </>
-        ) : (
-          <strong>{match.label ? stageLabels[locale][match.stage] : stage}</strong>
-        )}
-        <span className="venue">{match.venue}</span>
+        <div className="teamPair">
+          {match.home && match.away ? (
+            <>
+              <Team name={match.home} code={match.homeCode} locale={locale} />
+              <span className="versus">vs</span>
+              <Team name={match.away} code={match.awayCode} locale={locale} />
+            </>
+          ) : (
+            <strong>{match.label ? stageLabels[locale][match.stage] : stage}</strong>
+          )}
+        </div>
+        <div className="matchMeta">
+          <span className={`stageBadge ${stageClass[match.stage]}`}>{stage}</span>
+          <span className="venue">{match.venue}</span>
+        </div>
       </div>
-      <span className={`stageBadge ${stageClass[match.stage]}`}>{stage}</span>
     </div>
   );
 }
