@@ -147,13 +147,23 @@ function parseMatch(
     };
   }
 
-  if (stage === "group" && match?.includes(" vs ")) {
-    const [homeTeam, awayTeam] = match.split(/\s+vs\s+/, 2).map((team) => team.trim());
+  if (match?.includes(" vs ")) {
+    const parsedMatch = match.match(/^(?:(Match\s+\d+):\s*)?(.+?)\s+vs\s+(.+)$/i);
+
+    if (!parsedMatch) {
+      return {
+        home: null,
+        away: null,
+        label: label || match || null,
+      };
+    }
+
+    const [, matchLabel, homeTeam, awayTeam] = parsedMatch.map((value) => value?.trim());
 
     return {
       home: homeTeam || null,
       away: awayTeam || null,
-      label: null,
+      label: label || matchLabel || null,
     };
   }
 
