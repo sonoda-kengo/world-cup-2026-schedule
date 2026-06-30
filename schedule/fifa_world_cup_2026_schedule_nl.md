@@ -81,37 +81,37 @@ Timezone: GMT+2 / Amsterdam CEST
 
 ## Knockout Stage
 
-| Date       |  Time | Stage         | Match                                  | Venue                  |
-| ---------- | ----: | ------------- | -------------------------------------- | ---------------------- |
-| 2026-06-28 | 21:00 | Round of 32   | Match 73: South Africa vs Canada       | Los Angeles            |
-| 2026-06-29 | 19:00 | Round of 32   | Match 76: Brazil vs Japan              | Houston                |
-| 2026-06-29 | 22:30 | Round of 32   | Match 74: Germany vs 3rd A/B/C/D/F     | Boston                 |
-| 2026-06-30 | 03:00 | Round of 32   | Match 75: Netherlands vs Morocco       | Monterrey              |
-| 2026-06-30 | 19:00 | Round of 32   | Match 78: Côte d’Ivoire vs 2I          | Dallas                 |
-| 2026-06-30 | 23:00 | Round of 32   | Match 77: 1I vs 3rd C/D/F/G/H          | New York / New Jersey  |
-| 2026-07-01 | 03:00 | Round of 32   | Match 79: Mexico vs 3rd C/E/F/H/I      | Mexico City            |
-| 2026-07-01 | 18:00 | Round of 32   | Match 80: 1L vs 3rd E/H/I/J/K          | Atlanta                |
-| 2026-07-01 | 22:00 | Round of 32   | Match 82: 1G vs 3rd A/E/H/I/J          | Seattle                |
-| 2026-07-02 | 02:00 | Round of 32   | Match 81: USA vs 3rd B/E/F/I/J         | San Francisco Bay Area |
-| 2026-07-02 | 21:00 | Round of 32   | Match 84: 1H vs 2J                     | Los Angeles            |
-| 2026-07-03 | 01:00 | Round of 32   | Match 83: 2K vs 2L                     | Toronto                |
-| 2026-07-03 | 05:00 | Round of 32   | Match 85: Switzerland vs 3rd E/F/G/I/J | Vancouver              |
-| 2026-07-03 | 20:00 | Round of 32   | Match 88: Australia vs 2G              | Dallas                 |
-| 2026-07-04 | 00:00 | Round of 32   | Match 86: 1J vs 2H                     | Miami                  |
-| 2026-07-04 | 03:30 | Round of 32   | Match 87: 1K vs 3rd D/E/I/J/L          | Kansas City            |
-| 2026-07-04 | 19:00 | Round of 16   | Match 90: W73 vs W75                   | Houston                |
-| 2026-07-04 | 23:00 | Round of 16   | Match 89: W74 vs W77                   | Philadelphia           |
-| 2026-07-05 | 22:00 | Round of 16   | Match 91: W76 vs W78                   | New York / New Jersey  |
-| 2026-07-06 | 02:00 | Round of 16   | Match 92: W79 vs W80                   | Mexico City            |
-| 2026-07-06 | 18:00 | Round of 16   | Match 95: W86 vs W88                   | Atlanta                |
-| 2026-07-06 | 21:00 | Round of 16   | Match 93: W83 vs W84                   | Dallas                 |
-| 2026-07-07 | 02:00 | Round of 16   | Match 94: W81 vs W82                   | Seattle                |
-| 2026-07-07 | 22:00 | Round of 16   | Match 96: W85 vs W87                   | Vancouver              |
-| 2026-07-09 | 22:00 | Quarter-final | Match 97: W89 vs W90                   | Boston                 |
-| 2026-07-10 | 21:00 | Quarter-final | Match 98: W93 vs W94                   | Los Angeles            |
-| 2026-07-11 | 23:00 | Quarter-final | Match 99: W91 vs W92                   | Miami                  |
-| 2026-07-12 | 03:00 | Quarter-final | Match 100: W95 vs W96                  | Kansas City            |
-| 2026-07-14 | 21:00 | Semi-final    | Match 101: W97 vs W98                  | Dallas                 |
-| 2026-07-15 | 21:00 | Semi-final    | Match 102: W99 vs W100                 | Atlanta                |
-| 2026-07-18 | 23:00 | Bronze final  | Match 103                              | Miami                  |
-| 2026-07-19 | 21:00 | Final         | Match 104                              | New York / New Jersey  |
+| Date       |  Time | Stage         | Match                                 | Venue                  |
+| ---------- | ----: | ------------- | ------------------------------------- | ---------------------- |
+| 2026-06-28 | 21:00 | Round of 32   | Match 73: South Africa vs Canada      | Los Angeles            |
+| 2026-06-29 | 19:00 | Round of 32   | Match 76: Brazil vs Japan             | Houston                |
+| 2026-06-29 | 22:30 | Round of 32   | Match 74: Germany vs Paraguay         | Boston                 |
+| 2026-06-30 | 03:00 | Round of 32   | Match 75: Netherlands vs Morocco      | Monterrey              |
+| 2026-06-30 | 19:00 | Round of 32   | Match 78: Côte d’Ivoire vs Norway     | Dallas                 |
+| 2026-06-30 | 23:00 | Round of 32   | Match 77: France vs Sweden            | New York / New Jersey  |
+| 2026-07-01 | 03:00 | Round of 32   | Match 79: Mexico vs Ecuador           | Mexico City            |
+| 2026-07-01 | 18:00 | Round of 32   | Match 80: England vs DR Congo         | Atlanta                |
+| 2026-07-01 | 22:00 | Round of 32   | Match 82: Belgium vs Senegal          | Seattle                |
+| 2026-07-02 | 02:00 | Round of 32   | Match 81: USA vs Bosnia & Herzegovina | San Francisco Bay Area |
+| 2026-07-02 | 21:00 | Round of 32   | Match 84: Spain vs Austria            | Los Angeles            |
+| 2026-07-03 | 01:00 | Round of 32   | Match 83: Portugal vs Croatia         | Toronto                |
+| 2026-07-03 | 05:00 | Round of 32   | Match 85: Switzerland vs Algeria      | Vancouver              |
+| 2026-07-03 | 20:00 | Round of 32   | Match 88: Australia vs Egypt          | Dallas                 |
+| 2026-07-04 | 00:00 | Round of 32   | Match 86: Argentina vs Cape Verde     | Miami                  |
+| 2026-07-04 | 03:30 | Round of 32   | Match 87: Colombia vs Ghana           | Kansas City            |
+| 2026-07-04 | 19:00 | Round of 16   | Match 90: Canada vs Morocco           | Houston                |
+| 2026-07-04 | 23:00 | Round of 16   | Match 89: Paraguay vs W77             | Philadelphia           |
+| 2026-07-05 | 22:00 | Round of 16   | Match 91: Brazil vs W78               | New York / New Jersey  |
+| 2026-07-06 | 02:00 | Round of 16   | Match 92: W79 vs W80                  | Mexico City            |
+| 2026-07-06 | 18:00 | Round of 16   | Match 95: W86 vs W88                  | Atlanta                |
+| 2026-07-06 | 21:00 | Round of 16   | Match 93: W83 vs W84                  | Dallas                 |
+| 2026-07-07 | 02:00 | Round of 16   | Match 94: W81 vs W82                  | Seattle                |
+| 2026-07-07 | 22:00 | Round of 16   | Match 96: W85 vs W87                  | Vancouver              |
+| 2026-07-09 | 22:00 | Quarter-final | Match 97: W89 vs W90                  | Boston                 |
+| 2026-07-10 | 21:00 | Quarter-final | Match 98: W93 vs W94                  | Los Angeles            |
+| 2026-07-11 | 23:00 | Quarter-final | Match 99: W91 vs W92                  | Miami                  |
+| 2026-07-12 | 03:00 | Quarter-final | Match 100: W95 vs W96                 | Kansas City            |
+| 2026-07-14 | 21:00 | Semi-final    | Match 101: W97 vs W98                 | Dallas                 |
+| 2026-07-15 | 21:00 | Semi-final    | Match 102: W99 vs W100                | Atlanta                |
+| 2026-07-18 | 23:00 | Bronze final  | Match 103                             | Miami                  |
+| 2026-07-19 | 21:00 | Final         | Match 104                             | New York / New Jersey  |
