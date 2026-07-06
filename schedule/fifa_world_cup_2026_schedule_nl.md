@@ -100,16 +100,16 @@ Timezone: GMT+2 / Amsterdam CEST
 | 2026-07-04 | 00:00 | Round of 32   | Match 86: Argentina vs Cape Verde     | Miami                  |
 | 2026-07-04 | 03:30 | Round of 32   | Match 87: Colombia vs Ghana           | Kansas City            |
 | 2026-07-04 | 19:00 | Round of 16   | Match 90: Canada vs Morocco           | Houston                |
-| 2026-07-04 | 23:00 | Round of 16   | Match 89: Paraguay vs W77             | Philadelphia           |
-| 2026-07-05 | 22:00 | Round of 16   | Match 91: Brazil vs W78               | New York / New Jersey  |
-| 2026-07-06 | 02:00 | Round of 16   | Match 92: W79 vs W80                  | Mexico City            |
-| 2026-07-06 | 18:00 | Round of 16   | Match 95: W86 vs W88                  | Atlanta                |
-| 2026-07-06 | 21:00 | Round of 16   | Match 93: W83 vs W84                  | Dallas                 |
-| 2026-07-07 | 02:00 | Round of 16   | Match 94: W81 vs W82                  | Seattle                |
-| 2026-07-07 | 22:00 | Round of 16   | Match 96: W85 vs W87                  | Vancouver              |
-| 2026-07-09 | 22:00 | Quarter-final | Match 97: W89 vs W90                  | Boston                 |
+| 2026-07-04 | 23:00 | Round of 16   | Match 89: Paraguay vs France          | Philadelphia           |
+| 2026-07-05 | 22:00 | Round of 16   | Match 91: Brazil vs Norway            | New York / New Jersey  |
+| 2026-07-06 | 02:00 | Round of 16   | Match 92: Mexico vs England           | Mexico City            |
+| 2026-07-06 | 18:00 | Round of 16   | Match 95: Argentina vs Egypt          | Atlanta                |
+| 2026-07-06 | 21:00 | Round of 16   | Match 93: Portugal vs Spain           | Dallas                 |
+| 2026-07-07 | 02:00 | Round of 16   | Match 94: USA vs Belgium              | Seattle                |
+| 2026-07-07 | 22:00 | Round of 16   | Match 96: Switzerland vs Colombia     | Vancouver              |
+| 2026-07-09 | 22:00 | Quarter-final | Match 97: France vs Morocco           | Boston                 |
 | 2026-07-10 | 21:00 | Quarter-final | Match 98: W93 vs W94                  | Los Angeles            |
-| 2026-07-11 | 23:00 | Quarter-final | Match 99: W91 vs W92                  | Miami                  |
+| 2026-07-11 | 23:00 | Quarter-final | Match 99: Norway vs W92               | Miami                  |
 | 2026-07-12 | 03:00 | Quarter-final | Match 100: W95 vs W96                 | Kansas City            |
 | 2026-07-14 | 21:00 | Semi-final    | Match 101: W97 vs W98                 | Dallas                 |
 | 2026-07-15 | 21:00 | Semi-final    | Match 102: W99 vs W100                | Atlanta                |
