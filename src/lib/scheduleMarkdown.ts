@@ -126,7 +126,7 @@ function normalizeStage(stageText: string): Stage {
   if (normalized.includes("roundof16")) return "r16";
   if (normalized.includes("quarter")) return "qf";
   if (normalized.includes("semi")) return "sf";
-  if (normalized.includes("third") || normalized.includes("3rd")) return "3p";
+  if (normalized.includes("bronze") || normalized.includes("third") || normalized.includes("3rd")) return "3p";
   if (normalized.includes("final")) return "final";
 
   return stageText as Stage;
