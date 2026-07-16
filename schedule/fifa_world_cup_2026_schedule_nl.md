@@ -113,5 +113,5 @@ Timezone: GMT+2 / Amsterdam CEST
 | 2026-07-12 | 03:00 | Quarter-final | Match 100: Argentina vs Switzerland   | Kansas City            |
 | 2026-07-14 | 21:00 | Semi-final    | Match 101: France vs Spain            | Dallas                 |
 | 2026-07-15 | 21:00 | Semi-final    | Match 102: England vs Argentina       | Atlanta                |
-| 2026-07-18 | 23:00 | Bronze final  | Match 103: L101 vs L102               | Miami                  |
-| 2026-07-19 | 21:00 | Final         | Match 104: W101 vs W102               | New York / New Jersey  |
+| 2026-07-18 | 23:00 | Bronze final  | Match 103: France vs England          | Miami                  |
+| 2026-07-19 | 21:00 | Final         | Match 104: Spain vs Argentina         | New York / New Jersey  |
